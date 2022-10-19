@@ -3,14 +3,19 @@
 """
 isinstance() 函数，判断有没有继承关系
 """
+
+
 class Animal(object):
     pass
+
 
 class Dog(Animal):
     pass
 
+
 class Husky(Dog):
     pass
+
 
 a = Animal()
 d = Dog()

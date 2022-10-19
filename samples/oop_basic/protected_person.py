@@ -37,7 +37,7 @@ class Person(object):
         print("%s %d %s " % (self.__name, self.__age, self.__sex))
 
 
-person = Person('李将', 10, '男')
+person = Person('Alex', 20, '男')
 print(person.get_name())
 print(person.get_age())
 print(person.set_age(100))
@@ -56,6 +56,7 @@ class Test(object):
         self.__gender = gender
         return self.__gender
 
-test = Test('aa','assa')
-test.set_gender('aa')
+
+test = Test('file', 'assa')
+test.set_gender('file')
 print(test.get_gender())
