@@ -56,7 +56,6 @@ class Speaker(object):
     def __int__(self, n, t):
         self.name = n
         self.topic = t
-        print(self.__str__(self))
 
     def __str__(self):
         return 'name: ' + str(self.name) + ' topic:' + str(self.topic)
@@ -65,8 +64,8 @@ class Speaker(object):
 # 多继承示范
 class Sample(Speaker, Student):
 
-    def __int__(self, n, a, w, g, t):
-        Student.__init__(self, n, a, w, g)
+    def __int__(self, n, a, s, w, g, t):
+        Student.__init__(self, n, a, s, w, g)
         Speaker.__init__(self, n, t)
 
 
@@ -78,5 +77,5 @@ if __name__ == '__main__':
     student = Student('Alex', 20, '男', 120, 100)
     print(student.__str__())
 
-    sample = Sample('Alex', 20, '男', 120, 'python')
+    sample = Sample('Alex', 20, '男', 120, 'python', 'python')
     print(sample.__str__())

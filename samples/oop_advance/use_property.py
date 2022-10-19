@@ -5,6 +5,8 @@
 @property 装饰器 ，负责把一个方法变成属性进行调用
 
 """
+
+
 class Student(object):
 
     @property

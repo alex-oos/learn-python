@@ -31,5 +31,4 @@ print(a_list)
 def  is_palindprome(n):
     nn = str(n)
     return  nn ==nn[::-1]  # 反向取数
-print(list(filter(is_palindprome,['sb','aa'])))
-
+print(list(filter(is_palindprome, ['sb', 'file'])))
