@@ -21,3 +21,11 @@ def normalize(name):
 L1 = ['adam', 'LISA', 'barT']
 L2 = list(map(normalize, L1))
 print(L2)
+
+# 标准写法如下：
+tmp_list = list()
+for i in L1:
+    i = i[0].upper() + i[1:].lower()
+    tmp_list.append(i)
+
+print(tmp_list)
