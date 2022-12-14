@@ -21,3 +21,5 @@ print('时间戳秒级别', int(timestamp))
 print('时间戳毫秒级别', round(time.time() * 1000))
 # 接收时间戳，返回当地时间下的时间元组，语法:time.localtime(timestamp)
 print(time.localtime(time.time()))
+# time.strftime 时间格式化
+print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
