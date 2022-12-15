@@ -1,8 +1,0 @@
-syntax = 'proto3';
-import  "google/protobuf/any.proto";
-package  main;
-
-message  user{
-  int32 index = 1;
-  string name = 2;
-}
