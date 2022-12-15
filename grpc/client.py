@@ -14,7 +14,7 @@
 
 from google.protobuf import json_format
 
-import hello_billbil_pb2 as pb2
+from grpc.pb2 import hello_billbil_pb2 as pb2
 
 request = pb2.HelloDeWeiReq()
 request.name = 'boby'

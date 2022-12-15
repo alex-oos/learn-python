@@ -1,49 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import functools
-import re
-import time
-
 """
 装饰器： 
-
+  本质：在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。
+   其实就是使用闭包的概念，在其一个函数内，包含另外一个函数
+   @wraps接受一个函数来进行装饰，并加入了复制函数名称、注释文档、参数列表等等的功能。这可以让我们在装饰器里面访问在装饰之前的函数的属性，不加的话，就会呗函数内的操作给破坏掉
 """
 
-# eg1:
-def funA(arg):
-    print ('A')
-    a=arg()
 
-@funA
-def funB():
-    print ('B')
-
+# 一、无参的装饰器
 
 def log(func):
-    @functools.wraps(func)
-    def wrapper(*args, **kw):
-        print('call %s():' % func.__name__)
-        return func(*args, **kw)
-
-@log
-def now():
-    print('2015-3-25')
-
-# now()
-
-def logger(text):
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kw):
-            print('%s %s():' % (text, func.__name__))
-            return func(*args, **kw)
-        return wrapper
-    return decorator
-
-@logger('DEBUG')
-def today():
-    print('2015-3-25')
-
-today()
-print(today.__name__)
+    def wrapper(*args, **kwargs):
+        pass

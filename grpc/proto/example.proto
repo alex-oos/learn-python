@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto_;
+message Foo{
+  string foo_name = 1;
+  message Bar{
+    string bar_name = 1;
+  }
+  //  列表
+  repeated int32 nums = 2;
+  repeated BarMsg bars = 3;
+}
+message BarMsg{
+  int32 i = 1;
+  int32 j = 2;
+}
