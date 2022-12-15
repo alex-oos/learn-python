@@ -11,7 +11,7 @@
 #    @Time : 2022/9/2 11:30
 #    @FIle： service.py
 #    @Software: PyCharm
-import hello_billbil_pb2 as pb2
+from grpc.pb2 import hello_billbil_pb2 as pb2
 
 
 class Bibili(object):
