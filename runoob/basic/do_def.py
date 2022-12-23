@@ -51,12 +51,20 @@ def function2(name: str, age=20) -> None:
     return None
 
 
-def function3(*var) -> None:
+def function3(*args) -> None:
     """
+    *args,无关键字参数，传入参数的时候以列表，或者元素的形式传入
     不定参数，可以传递任何值，任何数量，方便使用
     """
-    print(*var)
+    print(args)
     return None
+
+
+def function4(**kwargs) -> None:
+    """
+    **kwargs 有关键字参数；当传入字典形式的参数时，就要使用**kwargs。
+    """
+    print(kwargs)
 
 
 if __name__ == '__main__':
@@ -65,3 +73,4 @@ if __name__ == '__main__':
     function1(name='alex', age=20)
     function2(name='alex')
     function3('1', 2, list(range(5)))
+    function4(a=1, b=2)
