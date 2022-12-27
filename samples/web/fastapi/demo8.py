@@ -11,7 +11,7 @@
 #    @Time : 2022/12/26 16:42
 #    @FIle： demo8.py
 #    @Software: PyCharm
-from typing import Union, Set
+from typing import Union, Set, List, Dict
 
 import uvicorn
 from fastapi import FastAPI
@@ -34,10 +34,32 @@ class Item(BaseModel):
     image: Union[Image, None] = None
 
 
+class Offer(BaseModel):
+    name: str
+    description: Union[str, None] = None
+    price: float
+    items: List[Item]
+
+
 @app.put('/items/{item_id}')
 async def update_item(iteme_id: int, item: Item):
     result = {'item_id': iteme_id, 'item': item}
     return result
+
+
+@app.post('/offers/')
+async def create_offer(offer: Offer):
+    return offer
+
+
+@app.post('/images/multiple/')
+async def create_multiple_images(images: List[Image]):
+    return images
+
+
+@app.post("/index-weights/")
+async def create_index_weights(weights: Dict[int, float]):
+    return weights
 
 
 if __name__ == '__main__':
