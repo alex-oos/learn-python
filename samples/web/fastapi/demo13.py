@@ -15,7 +15,7 @@ from typing import Union
 
 import uvicorn
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 app = FastAPI()
 
@@ -31,13 +31,13 @@ class Item(BaseModel):
 class UserIn(BaseModel):
     username: str
     password: str
-    email: str
+    email: EmailStr
     full_name: Union[str, None] = None
 
 
 class UserOut(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     full_name: Union[str, None] = None
 
 
