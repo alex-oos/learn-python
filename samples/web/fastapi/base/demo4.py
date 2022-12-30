@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/26 14:47
-#    @FIle： demo4.py
+#    @FIle： demo4.py 查询参数和字符串校验Query()的使用
 #    @Software: PyCharm
 from typing import Union
 

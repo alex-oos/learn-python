@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/27 15:03
-#    @FIle： demo9.py
+#    @FIle： demo9.py 模式的额外信息 - 例子¶
 #    @Software: PyCharm
 from typing import Union
 

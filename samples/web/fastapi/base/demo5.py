@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/26 15:17
-#    @FIle： demo5.py
+#    @FIle： demo5.py 路径参数和数值校验 Path的使用
 #    @Software: PyCharm
 from typing import Union
 

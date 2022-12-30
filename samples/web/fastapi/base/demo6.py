@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/26 15:49
-#    @FIle： demo6.py
+#    @FIle： demo6.py 请求体多个参数Body()的用法
 #    @Software: PyCharm
 from typing import Union
 

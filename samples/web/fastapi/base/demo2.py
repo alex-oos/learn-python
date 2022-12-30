@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/26 11:47
-#    @FIle： demo2.py
+#    @FIle： demo2.py 查询参数和路径参数混合
 #    @Software: PyCharm
 from typing import Union
 
@@ -56,4 +56,4 @@ async def read_use_item(item_id: int, needy: str):
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo2:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo2:app', host='0.0.0.0', port=8000, reload=True)

@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/26 12:45
-#    @FIle： demo3.py
+#    @FIle： demo3.py 请求体
 #    @Software: PyCharm
 from typing import Union
 
@@ -20,6 +20,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
+# 请求体参数需要继承BaseModel
 class Item(BaseModel):
     name: str
     description: Union[str, None] = None
@@ -28,7 +29,6 @@ class Item(BaseModel):
 
 
 # 请求体
-
 @app.post('/items/')
 async def create_item(item: Item):
     item_dict = item.dict()
@@ -39,5 +39,5 @@ async def create_item(item: Item):
 
 
 if __name__ == '__main__':
-    # swaager地址：http://127.0.0.1:8000/docs
-    uvicorn.run('demo3:app', host='127.0.0.1', port=8000, reload=True)
+    # swagher默认地址：http://127.0.0.1:8000/docs
+    uvicorn.run('demo3:app', host='0.0.0.0', port=8000, reload=True)
