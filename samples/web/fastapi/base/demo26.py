@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 20:37
-#    @FIle： demo26.py
+#    @FIle： demo26.py 路径操作装饰器依赖项¶
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, Depends, Header, HTTPException
@@ -28,6 +28,7 @@ async def verify_key(x_key: str = Header()):
     return x_key
 
 
+# 路径操作装饰器依赖项dependencies Depends引用函数的时候千万不要加括号
 @app.get('/items/', dependencies=[Depends(verify_token), Depends(verify_key)])
 async def read_items():
     return [{"item": "Foo"}, {"item": "Bar"}]

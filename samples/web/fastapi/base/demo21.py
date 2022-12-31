@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/28 18:20
-#    @FIle： demo21.py
+#    @FIle： demo21.py JSON 兼容编码器¶
 #    @Software: PyCharm
 from datetime import datetime
 
@@ -28,6 +28,7 @@ class Item(BaseModel):
     description: str | None = None
 
 
+# jsonable_encoder编码格式编码 其实就是相当于json.dumps()
 @app.put('/items/{id}')
 async def update_item(id: str, item: Item):
     json_compatible_item_data = jsonable_encoder(item)
@@ -36,4 +37,4 @@ async def update_item(id: str, item: Item):
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo21:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo21:app', host='0.0.0.0', port=8000, reload=True)

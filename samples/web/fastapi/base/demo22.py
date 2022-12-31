@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 10:36
-#    @FIle： demo22.py
+#    @FIle： demo22.py 请求体 - 更新数据 PUT
 #    @Software: PyCharm
 from typing import Union, List
 
@@ -41,6 +41,7 @@ async def read_item(item_id: str):
     return items[item_id]
 
 
+# 使用PUT 更新一下数据
 @app.put("/items/{item_id}", response_model=Item)
 async def update_item(item_id: str, item: Item):
     update_item_encoded = jsonable_encoder(item)
@@ -48,6 +49,7 @@ async def update_item(item_id: str, item: Item):
     return update_item_encoded
 
 
+# 使用patch 部分更新
 @app.patch("/items/{item_id}", response_model=Item)
 async def update_item_1(item_id: str, item: Item):
     stored_item_data = items[item_id]
@@ -59,4 +61,4 @@ async def update_item_1(item_id: str, item: Item):
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo22:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo22:app', host='0.0.0.0', port=8000, reload=True)

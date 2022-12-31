@@ -32,4 +32,4 @@ async def read_items(item_id: int = Path(title='the id of the item to get', ge=1
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo5:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo5:app', host='0.0.0.0', port=8000, reload=True)

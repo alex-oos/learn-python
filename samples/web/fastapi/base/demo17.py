@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/28 16:57
-#    @FIle： demo17.py
+#    @FIle： demo17.py 请求文件  File, UploadFile
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
@@ -19,11 +19,13 @@ from starlette.responses import HTMLResponse
 app = FastAPI()
 
 
+# 单文件上传
 @app.post("/file/")
 async def create_file(file: bytes = File()):
     return {"file_size": len(file)}
 
 
+# 单文件上传
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile):
     return {"filename": file.filename}
@@ -58,4 +60,4 @@ async def main():
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo17:app', host='127.0.0.1', reload=True)
+    uvicorn.run('demo17:app', host='0.0.0.0', reload=True)

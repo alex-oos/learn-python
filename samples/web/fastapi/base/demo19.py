@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/28 17:21
-#    @FIle： demo19.py
+#    @FIle： demo19.py 处理错误
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, HTTPException, status, Request
@@ -68,4 +68,4 @@ async def read_unicorn(name: str):
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo19:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo19:app', host='0.0.0.0', port=8000, reload=True)

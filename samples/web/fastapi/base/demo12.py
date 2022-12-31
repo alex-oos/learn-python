@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/27 15:59
-#    @FIle： demo12.py
+#    @FIle： demo12.py Header参数
 #    @Software: PyCharm
 from typing import Union
 
@@ -19,6 +19,7 @@ from fastapi import FastAPI, Header
 app = FastAPI()
 
 
+# 声明header参数
 @app.get('/items/')
 async def read_items(user_agent: Union[str, None] = Header(default=None)):
     return {'User-Agent': user_agent}
@@ -30,4 +31,4 @@ async def read_items(x_token: Union[list[str], None] = Header(default=None)):
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo12:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo12:app', host='0.0.0.0', port=8000, reload=True)

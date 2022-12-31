@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 11:09
-#    @FIle： demo23.py
+#    @FIle： demo23.py 依赖性 Depends()的用法
 #    @Software: PyCharm
 from typing import Union
 
@@ -25,6 +25,7 @@ async def common_parameters(
     return {"q": q, "skip": skip, "limit": limit}
 
 
+# 依赖的注入
 @app.get("/items/")
 async def read_items(commons: dict = Depends(common_parameters)):
     return commons

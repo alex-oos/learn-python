@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 21:17
-#    @FIle： demo27.py
+#    @FIle： demo27.py 全局依赖项
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, Header, HTTPException, Depends
@@ -26,6 +26,7 @@ async def verify_key(x_key: str = Header()):
     return x_key
 
 
+# 全局依赖项
 app = FastAPI(dependencies=[Depends(verify_key), Depends(verify_token)])
 
 

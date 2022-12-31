@@ -49,7 +49,7 @@ async def get_model(model_name: ModelName):
 
 
 if __name__ == '__main__':
-    uvicorn.run("demo1:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("demo1:app", host="0.0.0.0", port=8000, reload=True)
     #
     # cmd = 'uvicorn demo1:app --reload'
     # os.system(cmd)

@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/27 16:07
-#    @FIle： demo13.py
+#    @FIle： demo13.py 响应模型
 #    @Software: PyCharm
 from typing import Union
 
@@ -54,6 +54,7 @@ items = {
 }
 
 
+# response_model_exclude_unset 响应中将不会包含那些默认值，而是仅有实际设置的值。
 @app.get('/items/{item_id}', response_model=Item, response_model_exclude_unset=True)
 async def read_item(item_id: str):
     return items[item_id]
@@ -64,5 +65,18 @@ async def create_user(user: UserIn):
     return user
 
 
+# response_model_include 响应中含有特定的字段
+# response_model_exclude 响应中不含有特定的字段
+
+@app.get('/items/{item_id}/name', response_model=Item, response_model_include={"name", "description"}, )
+async def read_item_name(item_id: str):
+    return items[item_id]
+
+
+@app.get('/items/{item_id}/public', response_model=Item, response_model_exclude={"tax"})
+async def read_item_public_data(item_id: str):
+    return items[item_id]
+
+
 if __name__ == '__main__':
-    uvicorn.run('demo13:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo13:app', host='0.0.0.0', port=8000, reload=True)

@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 21:25
-#    @FIle： demo28.py
+#    @FIle： demo28.py 安全性-OAuth2
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, Depends

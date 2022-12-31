@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/27 15:33
-#    @FIle： demo10.py
+#    @FIle： demo10.py  额外的数据类型
 #    @Software: PyCharm
 from datetime import datetime, timedelta, time
 from typing import Union
@@ -21,8 +21,23 @@ from fastapi import FastAPI, Body
 app = FastAPI()
 
 
+# 基本数据类型
+# int
+# float
+# str
+# bool
+# 其他数据类型¶
+# UUID
+# datetime.datetime
+# datetime.date
+# datetime.time
+# datetime.timedelta
+# frozenset
+# bytes
+# Decimal
 @app.put('/items/{item_id}')
-async def read_items(item_id: UUID, start_datetime: Union[datetime, None] = Body(default=None),
+async def read_items(item_id: UUID,
+                     start_datetime: Union[datetime, None] = Body(default=None),
                      end_datetime: Union[datetime, None] = Body(default=None),
                      repeat_at: Union[time, None] = Body(default=None),
                      process_after: Union[timedelta, None] = Body(default=None)):
@@ -40,4 +55,4 @@ async def read_items(item_id: UUID, start_datetime: Union[datetime, None] = Body
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo10:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo10:app', host='0.0.0.0', port=8000, reload=True)

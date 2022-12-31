@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/28 17:03
-#    @FIle： demo18.py
+#    @FIle： demo18.py 请求表单和文件
 #    @Software: PyCharm
 import uvicorn
 from fastapi import FastAPI, File, Form, UploadFile
@@ -27,4 +27,4 @@ async def create_file(file: bytes = File(), fileb: UploadFile = File(), token: s
 
 
 if __name__ == '__main__':
-    uvicorn.run('demo18:app', host='127.0.0.1', port=8000, reload=True)
+    uvicorn.run('demo18:app', host='0.0.0.0', port=8000, reload=True)

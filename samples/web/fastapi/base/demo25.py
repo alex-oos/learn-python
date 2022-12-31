@@ -9,7 +9,7 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/30 11:38
-#    @FIle： demo25.py
+#    @FIle： demo25.py 子依赖项：其实就是一个依赖中嵌套另外一个依赖
 #    @Software: PyCharm
 from typing import Union
 
@@ -32,6 +32,7 @@ def query_or_cookie_extractor(
     return q
 
 
+# 子依赖项
 @app.get("/items/")
 async def read_query(query_or_default: str = Depends(query_or_cookie_extractor, use_cache=False)):
     return {"q_or_cookie": query_or_default}
