@@ -9,13 +9,14 @@
 #     oo    oo  'oo OOOO-| oo\_   ~o~~~o~'
 # +--+--+--+--+--+--+--+--+--+--+--+--+--+
 #    @Time : 2022/12/17 14:58
-#    @FIle： sad.py
+#    @FIle： model.py
 #    @Software: PyCharm
+#    @Description: 获取model 模型
 
 
 import openai
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 print(openai.Model.list())

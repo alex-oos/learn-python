@@ -11,6 +11,7 @@
 #    @Time : 2022/12/17 11:46
 #    @FIle： demo.py
 #    @Software: PyCharm
+#    @description: chatgpt demo
 
 # openai.organization = "org-H6bImdZRd5oLO8ziWy1iVy8W"
 # openai.api_key = os.getenv("")
@@ -18,7 +19,7 @@
 
 import openai
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 def chat_gpt(prompt):
