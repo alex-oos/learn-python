@@ -38,7 +38,10 @@ if __name__ == '__main__':
     print('1', os.getcwd())
     tmp_dict, tmp_list = get_all_file()
     os.chdir('/home/alex/VscodeProjects/learn-front-end/base/3_HTML5')
-    if len(tmp_dict) == 0:
+    if len(tmp_list) != 0:
         create_file(tmp_list)
+    elif len(tmp_dict) != 0:
+        create_file(tmp_dict)
     else:
         create_file(tmp_dict)
+        create_file(tmp_list)
