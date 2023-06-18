@@ -20,11 +20,12 @@ rename()方法需要两个参数，当前的文件名和新文件名。
 
 """
 
-import  os
+import os
+
 # 重命名testv1 为test2
-f = open("test.txt","w")
+f = open("test.txt", "w")
 f.close()
-os.rename("test.txt","11.txt")
+os.rename("test.txt", "11.txt")
 
 # remove()方法
 # 你可以用remove()方法删除文件，需要提供要删除的文件名作为参数。

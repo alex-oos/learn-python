@@ -34,14 +34,17 @@ def create_file(all_file):
 
 
 if __name__ == '__main__':
-    os.chdir('/home/alex/桌面/尚硅谷HTML+CSS基础教程/代码/3_HTML5')
-    print('1', os.getcwd())
+    old_path_windows = 'F:/尚硅谷HTML+CSS基础教程/代码/代码/2_CSS2'
+    old_path_linux = '/home/alex/桌面/尚硅谷HTML+CSS基础教程/代码/3_HTML5'
+    os.chdir(old_path_windows)
+    print('当前目录为：', os.getcwd())
     tmp_dict, tmp_list = get_all_file()
-    os.chdir('/home/alex/VscodeProjects/learn-front-end/base/3_HTML5')
+    new_path_widows = 'D:/code/WebstormProjects/learn-front-end/base/2_CSS2'
+    new_path_linux = '/home/alex/VscodeProjects/learn-front-end/base/4_CSS3'
+    os.chdir(new_path_widows)
     if len(tmp_list) != 0:
         create_file(tmp_list)
     elif len(tmp_dict) != 0:
         create_file(tmp_dict)
     else:
-        create_file(tmp_dict)
-        create_file(tmp_list)
+        pass
