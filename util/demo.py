@@ -10,7 +10,7 @@ def get_all_file():
         if os.path.isdir(i):
             os.chdir(i)
             tmp_dict.update({i: os.listdir(os.getcwd())})
-            os.chdir('../')
+            os.chdir('../../')
         else:
             tmp_list.append(i)
     return tmp_dict, tmp_list
@@ -25,7 +25,7 @@ def create_file(all_file):
             for j in all_file[i]:
                 with open(j, 'w+') as f:
                     pass
-            os.chdir('../')
+            os.chdir('../../')
     else:
         for i in all_file:
             with open(i, 'w+') as f:
